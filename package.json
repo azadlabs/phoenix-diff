@@ -14,7 +14,7 @@
     "babel-plugin-ng-annotate": "0.3.2",
     "babel-plugin-syntax-decorators": "6.13.0",
     "bootstrap-sass": "3.3.7",
-    "brunch": "2.10.8",
+    "brunch": "2.10.9",
     "clean-css-brunch": "2.10.0",
     "css-brunch": "2.10.0",
     "sass-brunch": "2.10.4",
