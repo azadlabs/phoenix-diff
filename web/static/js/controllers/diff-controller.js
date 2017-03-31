@@ -8,7 +8,7 @@ export default class DiffController {
   }
 
   show() {
-    this.$location.search({source_version: this.$scope.sourceVersion, target_version: this.$scope.targetVersion});
+    this.$location.search({source: this.$scope.sourceVersion, target: this.$scope.targetVersion});
 
     this.$scope.loading = true;
     this.$scope.showNoChangesMessage = false;
