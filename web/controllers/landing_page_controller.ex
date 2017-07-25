@@ -8,7 +8,7 @@ defmodule PhoenixDiff.LandingPageController do
     conn
     |> assign(:available_versions, available_versions)
     |> assign(:target_version, Map.get(params, "target", available_versions |> List.last))
-    |> assign(:source_version, Map.get(params, "source", available_versions |> Enum.at(-4)))
+    |> assign(:source_version, Map.get(params, "source", available_versions |> Enum.at(-5)))
     |> render("index.html")
   end
 end

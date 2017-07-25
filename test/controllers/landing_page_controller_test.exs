@@ -10,6 +10,6 @@ defmodule PhoenixDiff.LandingPageControllerTest do
     assert conn.assigns.available_versions |> length >= 14
 
     assert conn.assigns.source_version == "1.2.1"
-    assert conn.assigns.target_version == "1.3.0-rc.2"
+    assert conn.assigns.target_version == "1.3.0-rc.3"
   end
 end
