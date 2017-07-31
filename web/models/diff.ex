@@ -2,7 +2,7 @@ defmodule PhoenixDiff.Diff do
   @sample_app_path "data/sample-app"
   @diffs_path "data/diffs"
 
-  def available_versions, do: @sample_app_path |> File.ls! |> Enum.sort
+  def available_versions, do: @sample_app_path |> File.ls! |> Enum.sort_by(&Version.parse!/1, &(Version.compare(&1, &2) == :lt))
 
   def store_diffs do
     versions = available_versions()

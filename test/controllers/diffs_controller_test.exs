@@ -2,12 +2,6 @@ defmodule PhoenixDiff.DiffsControllerTest do
   use PhoenixDiff.ConnCase
 
   describe "GET show" do
-    test "returns 404 if versions are not given", %{conn: conn} do
-      conn = conn |> get("/diffs")
-
-      assert response(conn, 404)
-    end
-
     test "returns empty response if versions are not valid", %{conn: conn} do
       conn = conn |> get("/diffs/xxx/yyy")
 
