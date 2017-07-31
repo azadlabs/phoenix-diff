@@ -160,6 +160,22 @@ index 00dbb52..920b334 100644
  
  # Finally import the config/prod.secret.exs
  # which should be versioned separately.
+diff --git config/prod.secret.exs config/prod.secret.exs
+index ffc4767..4da4ec7 100644
+--- config/prod.secret.exs
++++ config/prod.secret.exs
+@@ -3,6 +3,11 @@ use Mix.Config
+ # In this file, we keep production configuration that
+ # you likely want to automate and keep it away from
+ # your version control system.
++#
++# You should document the content of this
++# file or create a script for recreating it, since it's
++# kept out of version control and might be hard to recover
++# or recreate for your teammates (or you later on).
+ config :sample_app, SampleApp.Endpoint,
+   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+ 
 diff --git lib/sample_app/endpoint.ex lib/sample_app/endpoint.ex
 index 643fb57..aef21a7 100644
 --- lib/sample_app/endpoint.ex

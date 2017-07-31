@@ -140,6 +140,28 @@ index ab7536b..95fb021 100644
  #
  
  # Finally import the config/prod.secret.exs
+diff --git config/prod.secret.exs config/prod.secret.exs
+index b7d67b4..1964c51 100644
+--- config/prod.secret.exs
++++ config/prod.secret.exs
+@@ -1,14 +1,14 @@
+ use Mix.Config
+ 
+ # In this file, we keep production configuration that
+-# you'll likely want to automate and keep away from
++# you likely want to automate and keep it away from
+ # your version control system.
+ #
+ # You should document the content of this
+ # file or create a script for recreating it, since it's
+ # kept out of version control and might be hard to recover
+-# or recreate for your teammates (or yourself later on).
+-config :sample_app, SampleAppWeb.Endpoint,
++# or recreate for your teammates (or you later on).
++config :sample_app, SampleApp.Web.Endpoint,
+   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+ 
+ # Configure your database
 diff --git config/test.exs config/test.exs
 index f6ca638..bbcae6f 100644
 --- config/test.exs

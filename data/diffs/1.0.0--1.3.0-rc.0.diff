@@ -516,6 +516,30 @@ index 00dbb52..95fb021 100644
  #
  
  # Finally import the config/prod.secret.exs
+diff --git config/prod.secret.exs config/prod.secret.exs
+index ffc4767..1964c51 100644
+--- config/prod.secret.exs
++++ config/prod.secret.exs
+@@ -3,7 +3,12 @@ use Mix.Config
+ # In this file, we keep production configuration that
+ # you likely want to automate and keep it away from
+ # your version control system.
+-config :sample_app, SampleApp.Endpoint,
++#
++# You should document the content of this
++# file or create a script for recreating it, since it's
++# kept out of version control and might be hard to recover
++# or recreate for your teammates (or you later on).
++config :sample_app, SampleApp.Web.Endpoint,
+   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+ 
+ # Configure your database
+@@ -12,4 +17,4 @@ config :sample_app, SampleApp.Repo,
+   username: "postgres",
+   password: "postgres",
+   database: "sample_app_prod",
+-  pool_size: 20
++  pool_size: 15
 diff --git config/test.exs config/test.exs
 index 427dcc9..bbcae6f 100644
 --- config/test.exs
