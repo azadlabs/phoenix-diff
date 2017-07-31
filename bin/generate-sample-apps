@@ -2,8 +2,8 @@
 
 set -e
 
-PHOENIX_VERSIONS="1.1.9 1.2.4 1.2.5"
-# PHOENIX_VERSIONS="1.3.0"
+# PHOENIX_VERSIONS="1.1.9 1.2.4 1.2.5"
+PHOENIX_VERSIONS="1.3.0"
 SAMPLE_APP_DIR="${PWD}/data/sample-app"
 
 export MIX_ARCHIVES="${PWD}/tmp/archives"
@@ -11,12 +11,12 @@ export MIX_ARCHIVES="${PWD}/tmp/archives"
 for phoenix_version in ${PHOENIX_VERSIONS}; do
   echo "Generating app for version ${phoenix_version}"
 
-  mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new-${phoenix_version}.ez --force
-  # mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new-${phoenix_version}.ez --force
+  # mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new-${phoenix_version}.ez --force
+  mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new-${phoenix_version}.ez --force
 
   sample_app_path="${SAMPLE_APP_DIR}/${phoenix_version}"
   rm -fr ${sample_app_path}
 
-  yes n | mix phoenix.new ${sample_app_path} --module SampleApp --app sample_app
-  # yes n | mix phx.new ${sample_app_path} --module SampleApp --app sample_app
+  # yes n | mix phoenix.new ${sample_app_path} --module SampleApp --app sample_app
+  yes n | mix phx.new ${sample_app_path} --module SampleApp --app sample_app
 done
