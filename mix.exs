@@ -43,7 +43,7 @@ defmodule PhoenixDiff.Mixfile do
       {:mix_test_watch, "~> 0.2", only: :dev},
 
       {:ex_unit_notifier, "~> 0.1", only: :test},
-      {:junit_formatter, "~> 1.1", only: :test}
+      {:junit_formatter, "~> 2.0", only: :test}
     ]
   end
 end
