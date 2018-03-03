@@ -4,7 +4,7 @@ defmodule PhoenixDiff.DiffTest do
   alias PhoenixDiff.Diff
 
   test "available_versions/0" do
-    available_versions = Diff.available_versions
+    available_versions = Diff.available_versions()
 
     assert available_versions |> is_list
     assert available_versions |> Enum.member?("1.2.0")

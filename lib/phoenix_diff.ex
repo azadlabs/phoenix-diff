@@ -9,7 +9,7 @@ defmodule PhoenixDiff do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts
-      supervisor(PhoenixDiff.Endpoint, []),
+      supervisor(PhoenixDiff.Endpoint, [])
       # Start your own worker by calling: PhoenixDiff.Worker.start_link(arg1, arg2, arg3)
       # worker(PhoenixDiff.Worker, [arg1, arg2, arg3]),
     ]

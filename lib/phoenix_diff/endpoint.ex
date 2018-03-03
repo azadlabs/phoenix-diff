@@ -8,8 +8,11 @@ defmodule PhoenixDiff.Endpoint do
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :phoenix_diff, gzip: false,
-    only: ~w(css fonts images js favicon.ico favicon-16x16.png favicon-32x32.png favicon-96x96.png robots.txt),
+    at: "/",
+    from: :phoenix_diff,
+    gzip: false,
+    only:
+      ~w(css fonts images js favicon.ico favicon-16x16.png favicon-32x32.png favicon-96x96.png robots.txt),
     headers: [{"access-control-allow-origin", "*"}]
 
   # Code reloading can be explicitly enabled under the
