@@ -4,12 +4,12 @@ defmodule PhoenixDiff.LandingPageController do
   alias PhoenixDiff.Diff
 
   def index(conn, params) do
-    available_versions = Diff.available_versions
+    available_versions = Diff.available_versions()
 
     conn
     |> assign(:available_versions, available_versions)
-    |> assign(:target_version, Map.get(params, "target", available_versions |> List.last))
-    |> assign(:source_version, Map.get(params, "source", available_versions |> Enum.at(-6)))
+    |> assign(:target_version, Map.get(params, "target", available_versions |> List.last()))
+    |> assign(:source_version, Map.get(params, "source", available_versions |> Enum.at(-2)))
     |> render("index.html")
   end
 end
