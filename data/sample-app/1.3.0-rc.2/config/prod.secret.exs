@@ -9,7 +9,7 @@ use Mix.Config
 # kept out of version control and might be hard to recover
 # or recreate for your teammates (or you later on).
 config :sample_app, SampleApp.Web.Endpoint,
-  secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  secret_key_base: "aaaaaaaa"
 
 # Configure your database
 config :sample_app, SampleApp.Repo,
