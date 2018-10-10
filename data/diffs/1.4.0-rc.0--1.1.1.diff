@@ -436,7 +436,7 @@ index 0000000..fa906bd
 +  }
 +};
 diff --git config/config.exs config/config.exs
-index d5426d2..52a4828 100644
+index be6f3a3..c039bc9 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -3,29 +3,27 @@
@@ -454,11 +454,10 @@ index d5426d2..52a4828 100644
 -config :sample_app, SampleAppWeb.Endpoint,
 +config :sample_app, SampleApp.Endpoint,
    url: [host: "localhost"],
--  secret_key_base: "T1B/E8yGNqTvtFbegZo9TrrgYESnMUmyM9kllLr0xlrfghy/C3iMAlsmzEAeTycc",
++  root: Path.dirname(__DIR__),
+   secret_key_base: "aaaaaaaa",
 -  render_errors: [view: SampleAppWeb.ErrorView, accepts: ~w(html json)],
 -  pubsub: [name: SampleApp.PubSub, adapter: Phoenix.PubSub.PG2]
-+  root: Path.dirname(__DIR__),
-+  secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 +  render_errors: [accepts: ~w(html json)],
 +  pubsub: [name: SampleApp.PubSub,
 +           adapter: Phoenix.PubSub.PG2]
@@ -669,7 +668,7 @@ index 0d797f4..920b334 100644
 +# which should be versioned separately.
  import_config "prod.secret.exs"
 diff --git config/prod.secret.exs config/prod.secret.exs
-index 5c7b04f..ffc4767 100644
+index a62a8db..cea21e6 100644
 --- config/prod.secret.exs
 +++ config/prod.secret.exs
 @@ -1,19 +1,15 @@
@@ -685,9 +684,8 @@ index 5c7b04f..ffc4767 100644
 -# kept out of version control and might be hard to recover
 -# or recreate for your teammates (or yourself later on).
 -config :sample_app, SampleAppWeb.Endpoint,
--  secret_key_base: "XZfd5qB9igop/8hVImSZx60tkGun9SrBpgGvNVPYvj6xjf2tCztFcUZ4S7qvKs6X"
 +config :sample_app, SampleApp.Endpoint,
-+  secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+   secret_key_base: "aaaaaaaa"
  
  # Configure your database
  config :sample_app, SampleApp.Repo,
@@ -756,10 +754,10 @@ index f9584e1..0000000
 -  end
 -end
 diff --git lib/sample_app_web/endpoint.ex lib/sample_app/endpoint.ex
-similarity index 59%
+similarity index 61%
 rename from data/sample-app/1.4.0-rc.0/lib/sample_app_web/endpoint.ex
 rename to data/sample-app/1.1.1/lib/sample_app/endpoint.ex
-index 10a749b..643fb57 100644
+index 92ca519..2493747 100644
 --- lib/sample_app_web/endpoint.ex
 +++ lib/sample_app/endpoint.ex
 @@ -1,18 +1,14 @@
@@ -801,8 +799,7 @@ index 10a749b..643fb57 100644
    plug Plug.Session,
      store: :cookie,
      key: "_sample_app_key",
--    signing_salt: "IDjkovdD"
-+    signing_salt: "abcdefgh"
+     signing_salt: "aaaaaaaa"
  
 -  plug SampleAppWeb.Router
 +  plug SampleApp.Router

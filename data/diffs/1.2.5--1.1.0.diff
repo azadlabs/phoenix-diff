@@ -89,7 +89,7 @@ index d2fe679..f2e7eec 100644
    },
  
 diff --git config/config.exs config/config.exs
-index 9dd8cf0..52a4828 100644
+index 5fb330e..c039bc9 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -5,15 +5,12 @@
@@ -104,7 +104,7 @@ index 9dd8cf0..52a4828 100644
  config :sample_app, SampleApp.Endpoint,
    url: [host: "localhost"],
 +  root: Path.dirname(__DIR__),
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   secret_key_base: "aaaaaaaa",
 -  render_errors: [view: SampleApp.ErrorView, accepts: ~w(html json)],
 +  render_errors: [accepts: ~w(html json)],
    pubsub: [name: SampleApp.PubSub,
@@ -164,7 +164,7 @@ index 00dbb52..920b334 100644
  # Finally import the config/prod.secret.exs
  # which should be versioned separately.
 diff --git config/prod.secret.exs config/prod.secret.exs
-index 4da4ec7..ffc4767 100644
+index 6e7580f..cea21e6 100644
 --- config/prod.secret.exs
 +++ config/prod.secret.exs
 @@ -3,11 +3,6 @@ use Mix.Config
@@ -177,10 +177,10 @@ index 4da4ec7..ffc4767 100644
 -# kept out of version control and might be hard to recover
 -# or recreate for your teammates (or you later on).
  config :sample_app, SampleApp.Endpoint,
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+   secret_key_base: "aaaaaaaa"
  
 diff --git lib/sample_app/endpoint.ex lib/sample_app/endpoint.ex
-index aef21a7..643fb57 100644
+index 5c56bfa..2493747 100644
 --- lib/sample_app/endpoint.ex
 +++ lib/sample_app/endpoint.ex
 @@ -30,9 +30,6 @@ defmodule SampleApp.Endpoint do

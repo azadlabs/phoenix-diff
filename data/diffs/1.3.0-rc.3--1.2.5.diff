@@ -128,7 +128,7 @@ index b15df46..d2fe679 100644
    },
  
 diff --git config/config.exs config/config.exs
-index 301905d..9dd8cf0 100644
+index 86eb0e7..5fb330e 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -10,10 +10,10 @@ config :sample_app,
@@ -138,7 +138,7 @@ index 301905d..9dd8cf0 100644
 -config :sample_app, SampleAppWeb.Endpoint,
 +config :sample_app, SampleApp.Endpoint,
    url: [host: "localhost"],
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   secret_key_base: "aaaaaaaa",
 -  render_errors: [view: SampleAppWeb.ErrorView, accepts: ~w(html json)],
 +  render_errors: [view: SampleApp.ErrorView, accepts: ~w(html json)],
    pubsub: [name: SampleApp.PubSub,
@@ -262,7 +262,7 @@ index ab7536b..00dbb52 100644
  
  # Finally import the config/prod.secret.exs
 diff --git config/prod.secret.exs config/prod.secret.exs
-index b7d67b4..4da4ec7 100644
+index 1433abb..6e7580f 100644
 --- config/prod.secret.exs
 +++ config/prod.secret.exs
 @@ -1,14 +1,14 @@
@@ -280,7 +280,7 @@ index b7d67b4..4da4ec7 100644
 -config :sample_app, SampleAppWeb.Endpoint,
 +# or recreate for your teammates (or you later on).
 +config :sample_app, SampleApp.Endpoint,
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+   secret_key_base: "aaaaaaaa"
  
  # Configure your database
 @@ -17,4 +17,4 @@ config :sample_app, SampleApp.Repo,
@@ -343,7 +343,7 @@ diff --git lib/sample_app_web/endpoint.ex lib/sample_app/endpoint.ex
 similarity index 65%
 rename from data/sample-app/1.3.0-rc.3/lib/sample_app_web/endpoint.ex
 rename to data/sample-app/1.2.5/lib/sample_app/endpoint.ex
-index b2c3e46..aef21a7 100644
+index 21de496..5c56bfa 100644
 --- lib/sample_app_web/endpoint.ex
 +++ lib/sample_app/endpoint.ex
 @@ -1,7 +1,7 @@
@@ -358,7 +358,7 @@ index b2c3e46..aef21a7 100644
    #
 @@ -38,20 +38,5 @@ defmodule SampleAppWeb.Endpoint do
      key: "_sample_app_key",
-     signing_salt: "abcdefgh"
+     signing_salt: "aaaaaaaa"
  
 -  plug SampleAppWeb.Router
 -

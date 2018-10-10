@@ -176,7 +176,7 @@ index dc34ce8..d3999c9 100644
    }
  };
 diff --git config/config.exs config/config.exs
-index 3a65abf..52a4828 100644
+index bbfd9f3..c039bc9 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -5,15 +5,12 @@
@@ -192,7 +192,7 @@ index 3a65abf..52a4828 100644
 +config :sample_app, SampleApp.Endpoint,
    url: [host: "localhost"],
 +  root: Path.dirname(__DIR__),
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   secret_key_base: "aaaaaaaa",
 -  render_errors: [view: SampleApp.Web.ErrorView, accepts: ~w(html json)],
 +  render_errors: [accepts: ~w(html json)],
    pubsub: [name: SampleApp.PubSub,
@@ -340,7 +340,7 @@ index 95fb021..920b334 100644
  # Finally import the config/prod.secret.exs
  # which should be versioned separately.
 diff --git config/prod.secret.exs config/prod.secret.exs
-index 1964c51..ffc4767 100644
+index ef461fd..cea21e6 100644
 --- config/prod.secret.exs
 +++ config/prod.secret.exs
 @@ -3,12 +3,7 @@ use Mix.Config
@@ -354,7 +354,7 @@ index 1964c51..ffc4767 100644
 -# or recreate for your teammates (or you later on).
 -config :sample_app, SampleApp.Web.Endpoint,
 +config :sample_app, SampleApp.Endpoint,
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+   secret_key_base: "aaaaaaaa"
  
  # Configure your database
 @@ -17,4 +12,4 @@ config :sample_app, SampleApp.Repo,
@@ -380,7 +380,7 @@ diff --git lib/sample_app/web/endpoint.ex lib/sample_app/endpoint.ex
 similarity index 57%
 rename from data/sample-app/1.3.0-rc.0/lib/sample_app/web/endpoint.ex
 rename to data/sample-app/1.1.9/lib/sample_app/endpoint.ex
-index c98cec5..643fb57 100644
+index a7bd549..2493747 100644
 --- lib/sample_app/web/endpoint.ex
 +++ lib/sample_app/endpoint.ex
 @@ -1,7 +1,7 @@
@@ -403,7 +403,7 @@ index c98cec5..643fb57 100644
    plug Plug.Session,
      store: :cookie,
      key: "_sample_app_key",
-     signing_salt: "abcdefgh"
+     signing_salt: "aaaaaaaa"
  
 -  plug SampleApp.Web.Router
 -

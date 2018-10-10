@@ -530,10 +530,10 @@ index 0000000..45ab14f
 +  ]
 +});
 diff --git config/config.exs config/config.exs
-index 301905d..d5426d2 100644
+index 86eb0e7..be6f3a3 100644
 --- config/config.exs
 +++ config/config.exs
-@@ -3,25 +3,29 @@
+@@ -3,9 +3,10 @@
  #
  # This configuration file is loaded before any dependency and
  # is restricted to this project.
@@ -545,11 +545,9 @@ index 301905d..d5426d2 100644
  config :sample_app,
    ecto_repos: [SampleApp.Repo]
  
- # Configures the endpoint
- config :sample_app, SampleAppWeb.Endpoint,
+@@ -14,14 +15,17 @@ config :sample_app, SampleAppWeb.Endpoint,
    url: [host: "localhost"],
--  secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-+  secret_key_base: "T1B/E8yGNqTvtFbegZo9TrrgYESnMUmyM9kllLr0xlrfghy/C3iMAlsmzEAeTycc",
+   secret_key_base: "aaaaaaaa",
    render_errors: [view: SampleAppWeb.ErrorView, accepts: ~w(html json)],
 -  pubsub: [name: SampleApp.PubSub,
 -           adapter: Phoenix.PubSub.PG2]
@@ -723,15 +721,10 @@ index ab7536b..0d797f4 100644
 +# separately.
  import_config "prod.secret.exs"
 diff --git config/prod.secret.exs config/prod.secret.exs
-index b7d67b4..5c7b04f 100644
+index 1433abb..a62a8db 100644
 --- config/prod.secret.exs
 +++ config/prod.secret.exs
-@@ -9,11 +9,10 @@ use Mix.Config
- # kept out of version control and might be hard to recover
- # or recreate for your teammates (or yourself later on).
- config :sample_app, SampleAppWeb.Endpoint,
--  secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-+  secret_key_base: "XZfd5qB9igop/8hVImSZx60tkGun9SrBpgGvNVPYvj6xjf2tCztFcUZ4S7qvKs6X"
+@@ -13,7 +13,6 @@ config :sample_app, SampleAppWeb.Endpoint,
  
  # Configure your database
  config :sample_app, SampleApp.Repo,
@@ -840,7 +833,7 @@ index c981617..d88618d 100644
    end
  end
 diff --git lib/sample_app_web/endpoint.ex lib/sample_app_web/endpoint.ex
-index b2c3e46..10a749b 100644
+index 21de496..92ca519 100644
 --- lib/sample_app_web/endpoint.ex
 +++ lib/sample_app_web/endpoint.ex
 @@ -1,14 +1,18 @@
@@ -874,12 +867,8 @@ index b2c3e46..10a749b 100644
  
    plug Plug.MethodOverride
    plug Plug.Head
-@@ -36,22 +40,7 @@ defmodule SampleAppWeb.Endpoint do
-   plug Plug.Session,
-     store: :cookie,
-     key: "_sample_app_key",
--    signing_salt: "abcdefgh"
-+    signing_salt: "IDjkovdD"
+@@ -39,19 +43,4 @@ defmodule SampleAppWeb.Endpoint do
+     signing_salt: "aaaaaaaa"
  
    plug SampleAppWeb.Router
 -

@@ -1,5 +1,5 @@
 diff --git config/config.exs config/config.exs
-index 12bd41c..bdb3261 100644
+index 49827c9..47bdd68 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -6,16 +6,14 @@
@@ -13,7 +13,7 @@ index 12bd41c..bdb3261 100644
  # Configures the endpoint
  config :sample_app, SampleAppWeb.Endpoint,
    url: [host: "localhost"],
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   secret_key_base: "aaaaaaaa",
    render_errors: [view: SampleAppWeb.ErrorView, accepts: ~w(html json)],
 -  pubsub: [name: SampleApp.PubSub,
 -           adapter: Phoenix.PubSub.PG2]
@@ -28,7 +28,7 @@ index 12bd41c..bdb3261 100644
 -import_config "#{Mix.env}.exs"
 +import_config "#{Mix.env()}.exs"
 diff --git lib/sample_app_web/endpoint.ex lib/sample_app_web/endpoint.ex
-index 02c04d8..a58d63a 100644
+index 58ce45a..8613087 100644
 --- lib/sample_app_web/endpoint.ex
 +++ lib/sample_app_web/endpoint.ex
 @@ -8,7 +8,9 @@ defmodule SampleAppWeb.Endpoint do

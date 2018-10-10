@@ -267,7 +267,7 @@ similarity index 100%
 rename from data/sample-app/1.1.6/web/static/assets/robots.txt
 rename to data/sample-app/1.3.4/assets/static/robots.txt
 diff --git config/config.exs config/config.exs
-index 52a4828..12bd41c 100644
+index c039bc9..49827c9 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -5,25 +5,23 @@
@@ -283,7 +283,7 @@ index 52a4828..12bd41c 100644
 +config :sample_app, SampleAppWeb.Endpoint,
    url: [host: "localhost"],
 -  root: Path.dirname(__DIR__),
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   secret_key_base: "aaaaaaaa",
 -  render_errors: [accepts: ~w(html json)],
 +  render_errors: [view: SampleAppWeb.ErrorView, accepts: ~w(html json)],
    pubsub: [name: SampleApp.PubSub,
@@ -437,7 +437,7 @@ index 920b334..ab7536b 100644
  # Finally import the config/prod.secret.exs
  # which should be versioned separately.
 diff --git config/prod.secret.exs config/prod.secret.exs
-index ffc4767..b7d67b4 100644
+index cea21e6..1433abb 100644
 --- config/prod.secret.exs
 +++ config/prod.secret.exs
 @@ -1,9 +1,14 @@
@@ -454,7 +454,7 @@ index ffc4767..b7d67b4 100644
 +# kept out of version control and might be hard to recover
 +# or recreate for your teammates (or yourself later on).
 +config :sample_app, SampleAppWeb.Endpoint,
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+   secret_key_base: "aaaaaaaa"
  
  # Configure your database
 @@ -12,4 +17,4 @@ config :sample_app, SampleApp.Repo,
@@ -620,7 +620,7 @@ diff --git lib/sample_app/endpoint.ex lib/sample_app_web/endpoint.ex
 similarity index 54%
 rename from data/sample-app/1.1.6/lib/sample_app/endpoint.ex
 rename to data/sample-app/1.3.4/lib/sample_app_web/endpoint.ex
-index 643fb57..02c04d8 100644
+index 2493747..58ce45a 100644
 --- lib/sample_app/endpoint.ex
 +++ lib/sample_app_web/endpoint.ex
 @@ -1,7 +1,7 @@
@@ -651,7 +651,7 @@ index 643fb57..02c04d8 100644
    plug Plug.Session,
      store: :cookie,
      key: "_sample_app_key",
-     signing_salt: "abcdefgh"
+     signing_salt: "aaaaaaaa"
  
 -  plug SampleApp.Router
 +  plug SampleAppWeb.Router

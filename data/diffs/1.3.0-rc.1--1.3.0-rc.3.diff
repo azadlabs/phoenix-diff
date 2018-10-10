@@ -39,7 +39,7 @@ index e180c46..4cc3986 100644
    }
  }
 diff --git config/config.exs config/config.exs
-index 3a65abf..301905d 100644
+index bbfd9f3..86eb0e7 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -10,10 +10,10 @@ config :sample_app,
@@ -49,7 +49,7 @@ index 3a65abf..301905d 100644
 -config :sample_app, SampleApp.Web.Endpoint,
 +config :sample_app, SampleAppWeb.Endpoint,
    url: [host: "localhost"],
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   secret_key_base: "aaaaaaaa",
 -  render_errors: [view: SampleApp.Web.ErrorView, accepts: ~w(html json)],
 +  render_errors: [view: SampleAppWeb.ErrorView, accepts: ~w(html json)],
    pubsub: [name: SampleApp.PubSub,
@@ -141,7 +141,7 @@ index e911c6c..ab7536b 100644
  
  # Finally import the config/prod.secret.exs
 diff --git config/prod.secret.exs config/prod.secret.exs
-index 1964c51..b7d67b4 100644
+index ef461fd..1433abb 100644
 --- config/prod.secret.exs
 +++ config/prod.secret.exs
 @@ -1,14 +1,14 @@
@@ -159,7 +159,7 @@ index 1964c51..b7d67b4 100644
 -config :sample_app, SampleApp.Web.Endpoint,
 +# or recreate for your teammates (or yourself later on).
 +config :sample_app, SampleAppWeb.Endpoint,
-   secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+   secret_key_base: "aaaaaaaa"
  
  # Configure your database
 diff --git config/test.exs config/test.exs
@@ -302,7 +302,7 @@ diff --git lib/sample_app/web/endpoint.ex lib/sample_app_web/endpoint.ex
 similarity index 67%
 rename from data/sample-app/1.3.0-rc.1/lib/sample_app/web/endpoint.ex
 rename to data/sample-app/1.3.0-rc.3/lib/sample_app_web/endpoint.ex
-index c98cec5..b2c3e46 100644
+index a7bd549..21de496 100644
 --- lib/sample_app/web/endpoint.ex
 +++ lib/sample_app_web/endpoint.ex
 @@ -1,7 +1,7 @@
@@ -317,7 +317,7 @@ index c98cec5..b2c3e46 100644
    #
 @@ -38,17 +38,20 @@ defmodule SampleApp.Web.Endpoint do
      key: "_sample_app_key",
-     signing_salt: "abcdefgh"
+     signing_salt: "aaaaaaaa"
  
 -  plug SampleApp.Web.Router
 +  plug SampleAppWeb.Router

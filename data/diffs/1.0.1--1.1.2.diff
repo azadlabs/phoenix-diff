@@ -23,7 +23,7 @@ index fa906bd..d3999c9 100644
    }
  };
 diff --git config/config.exs config/config.exs
-index 101273e..52a4828 100644
+index ed97b4a..c039bc9 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -22,3 +22,8 @@ config :logger, :console,

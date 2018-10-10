@@ -511,7 +511,7 @@ index fa906bd..0000000
 -  }
 -};
 diff --git config/config.exs config/config.exs
-index 52a4828..d5426d2 100644
+index c039bc9..be6f3a3 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -3,27 +3,29 @@
@@ -530,11 +530,10 @@ index 52a4828..d5426d2 100644
 +config :sample_app, SampleAppWeb.Endpoint,
    url: [host: "localhost"],
 -  root: Path.dirname(__DIR__),
--  secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   secret_key_base: "aaaaaaaa",
 -  render_errors: [accepts: ~w(html json)],
 -  pubsub: [name: SampleApp.PubSub,
 -           adapter: Phoenix.PubSub.PG2]
-+  secret_key_base: "T1B/E8yGNqTvtFbegZo9TrrgYESnMUmyM9kllLr0xlrfghy/C3iMAlsmzEAeTycc",
 +  render_errors: [view: SampleAppWeb.ErrorView, accepts: ~w(html json)],
 +  pubsub: [name: SampleApp.PubSub, adapter: Phoenix.PubSub.PG2]
  
@@ -740,7 +739,7 @@ index 00dbb52..0d797f4 100644
 +# separately.
  import_config "prod.secret.exs"
 diff --git config/prod.secret.exs config/prod.secret.exs
-index ffc4767..5c7b04f 100644
+index cea21e6..a62a8db 100644
 --- config/prod.secret.exs
 +++ config/prod.secret.exs
 @@ -1,15 +1,19 @@
@@ -751,14 +750,13 @@ index ffc4767..5c7b04f 100644
 +# you'll likely want to automate and keep away from
  # your version control system.
 -config :sample_app, SampleApp.Endpoint,
--  secret_key_base: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 +#
 +# You should document the content of this
 +# file or create a script for recreating it, since it's
 +# kept out of version control and might be hard to recover
 +# or recreate for your teammates (or yourself later on).
 +config :sample_app, SampleAppWeb.Endpoint,
-+  secret_key_base: "XZfd5qB9igop/8hVImSZx60tkGun9SrBpgGvNVPYvj6xjf2tCztFcUZ4S7qvKs6X"
+   secret_key_base: "aaaaaaaa"
  
  # Configure your database
  config :sample_app, SampleApp.Repo,
@@ -936,10 +934,10 @@ index 0000000..d88618d
 +  end
 +end
 diff --git lib/sample_app/endpoint.ex lib/sample_app_web/endpoint.ex
-similarity index 59%
+similarity index 61%
 rename from data/sample-app/1.0.4/lib/sample_app/endpoint.ex
 rename to data/sample-app/1.4.0-rc.0/lib/sample_app_web/endpoint.ex
-index 643fb57..10a749b 100644
+index 2493747..92ca519 100644
 --- lib/sample_app/endpoint.ex
 +++ lib/sample_app_web/endpoint.ex
 @@ -1,14 +1,18 @@
@@ -981,8 +979,7 @@ index 643fb57..10a749b 100644
    plug Plug.Session,
      store: :cookie,
      key: "_sample_app_key",
--    signing_salt: "abcdefgh"
-+    signing_salt: "IDjkovdD"
+     signing_salt: "aaaaaaaa"
  
 -  plug SampleApp.Router
 +  plug SampleAppWeb.Router

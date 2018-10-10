@@ -15,7 +15,7 @@ index 0b406d7..df69d80 100644
  .header {
    border-bottom: 1px solid #e5e5e5;
 diff --git config/config.exs config/config.exs
-index 12bd41c..301905d 100644
+index 49827c9..86eb0e7 100644
 --- config/config.exs
 +++ config/config.exs
 @@ -20,7 +20,7 @@ config :sample_app, SampleAppWeb.Endpoint,
@@ -28,7 +28,7 @@ index 12bd41c..301905d 100644
  # Import environment specific config. This must remain at the bottom
  # of this file so it overrides the configuration defined above.
 diff --git lib/sample_app_web/endpoint.ex lib/sample_app_web/endpoint.ex
-index 02c04d8..b2c3e46 100644
+index 58ce45a..21de496 100644
 --- lib/sample_app_web/endpoint.ex
 +++ lib/sample_app_web/endpoint.ex
 @@ -19,6 +19,7 @@ defmodule SampleAppWeb.Endpoint do
